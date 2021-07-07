@@ -1,47 +1,12 @@
 @startuml
-skinparam classAttributeIconSize 0
-hide empty members
-hide circle
-
-skinparam class {
-  BorderColor Black
-  BackgroundColor<<Client_Server_Interface>> LightGreen
-  BackgroundColor<<Array_Data_Type>> LightBlue
-  BackgroundColor<<Component_Type>> LightGrey
-}
-
-class T_One_Wire_Device_Address  <<Array_Data_Type>>
-{
-  Allows to model a data representing the address of a OneWire bus slave device.
-  The first byte is the 1-Wire device family code.
-  The next 6 bytes (48 bits) are a unique serial number.
-  The last byte is a CRC (=X^8+X^5+X^4+1) calculated from the first 56 bits.
-  __
-  base = uint8
-  size = 8
-}
-
-interface One_Wire_Protocol <<Client_Server_Interface>>
-{
-  This interface gathers operations allowing to execute basic sequences of the 1-Wire communication protocol.
-  Every operation first performs a reset, then selects the slave and finally sends the command.
-  __
-  {abstract} +Send_Simple_Command( IN slave_address:T_One_Wire_Device_Address, IN command:uint8 )
-  {abstract} +Send_Write_Command( IN slave_address:T_One_Wire_Device_Address, IN command:uint8, IN message:uint8_array, IN nb_bytes:uint8 )
-  {abstract} +Send_Read_Command( IN slave_address:T_One_Wire_Device_Address, IN command:uint8, OUT message:uint8_array, OUT nb_bytes:uint8 )
-}
 
 class ATmega_One_Wire_Interaction_Layer <<Component_Type>>
 {
   This Component_Type allows to manage a 1-Wire bus through a
   digital pin of an ATmega chip.
-  __
+  --
   +Pin_Address:uint8
   +Bit_Index:uint8
 }
-
-T_One_Wire_Device_Address <.. One_Wire_Protocol : use
-
-One_Wire_Protocol <|...# "Communication" ATmega_One_Wire_Interaction_Layer
 
 @enduml
