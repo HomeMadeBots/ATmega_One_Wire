@@ -9,4 +9,4 @@ This repo use the following repositories :
 
 ## Physical architecture
 
-![physical architecture](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/HomeMadeBots/ATmega_One_Wire/master/doc/ATmega_One_Wire_Interaction_Layer.iuml)
+![physical architecture](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/HomeMadeBots/ATmega_One_Wire/main/doc/ATmega_One_Wire.iuml)
