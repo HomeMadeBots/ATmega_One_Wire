@@ -1,0 +1,10 @@
+@startuml
+
+!includeurl https://gist.githubusercontent.com/Arnaud-Bonneuil/c317a7a30bed7d64e2b5b1f558ac00cf/raw/sober.puml
+
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/One_Wire_Interfaces/main/doc/One_Wire_Protocol.puml
+!includeurl https://raw.githubusercontent.com/HomeMadeBots/ATmega_One_Wire/main/doc/ATmega_One_Wire_Interaction_Layer.puml
+
+One_Wire_Protocol <|...# "Communication" ATmega_One_Wire_Interaction_Layer
+
+@enduml

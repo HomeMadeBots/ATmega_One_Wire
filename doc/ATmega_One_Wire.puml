@@ -1,12 +1,9 @@
 @startuml
 
-!includeurl https://gist.githubusercontent.com/Arnaud-Bonneuil/c317a7a30bed7d64e2b5b1f558ac00cf/raw/sober.puml
-!includeurl https://raw.githubusercontent.com/HomeMadeBots/One_Wire_Interfaces/main/doc/One_Wire_Protocol.puml
-!includeurl https://raw.githubusercontent.com/HomeMadeBots/One_Wire_Interfaces/main/doc/T_One_Wire_Device_Address.puml
-!includeurl https://raw.githubusercontent.com/HomeMadeBots/ATmega_One_Wire/main/doc/ATmega_One_Wire_Interaction_Layer.puml
-
-T_One_Wire_Device_Address <.. One_Wire_Protocol : use
-
-One_Wire_Protocol <|...# "Communication" ATmega_One_Wire_Interaction_Layer
+package ATmega_One_Wire [
+ Gathers software elements allowing to manage
+ a 1-Wire bus through a digital pin of an
+ ATmega chip.
+]
 
 @enduml

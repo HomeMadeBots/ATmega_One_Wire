@@ -4,6 +4,12 @@ class ATmega_One_Wire_Interaction_Layer <<Component_Type>>
 {
   This Component_Type allows to manage a 1-Wire bus through a
   digital pin of an ATmega chip.
+  
+  The pin of the ATmega chip needs to be configured using the
+  port register :
+  \t//Pin_Address// is the adress of the port register (e.g. &PIND),
+  \t//Bit_Index// is the bit id of the pin in the register (7 to 0).
+  
   --
   +Pin_Address:uint8
   +Bit_Index:uint8
